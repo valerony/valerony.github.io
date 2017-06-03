@@ -47,51 +47,19 @@ var MYAPP = (function($){
 		})	
 
 	};
+	jQuery.ajax({
+		url: _url,
+		dataType: 'json',
+		success: function(data){
+			console.log('')
+			dataArray = data;
+			renderProduct(data);
+			eventListener();
+		},
+		error: function(jqXHR, textStatus, errorThorwn){
+			console.log(jqXHR)
+		}
+	});
 
-
-		jQuery.ajax({
-			url: _url,
-			dataType: 'json',
-	  		success: function(data){
-	  			console.log('')
-	  			dataArray = data;
-	  			renderProduct(data);
-	  			eventListener();
-	  		},
-	  		error: function(jqXHR, textStatus, errorThorwn){
-	  			console.log(jqXHR)
-	  		}
-		})
-		jQuery.ajax({
-			url: _url,
-			dataType: 'json',
-	  		success: function(data){
-	  			console.log('')
-	  			dataArray = data;
-	  			renderProduct(data);
-	  			eventListener();
-	  		},
-	  		error: function(jqXHR, textStatus, errorThorwn){
-	  			console.log(jqXHR)
-	  		}
-		})
-
-		// var displayTweets = function () {
-	 //    	$.ajax({
-		//         cache: false,
-		//         type: 'GET',
-		//         crossDomain: true,
-		//         url: _url,
-		//         contentType: 'application/json; charset=utf-8',
-		//         dataType: 'json',
-		//         success: function (data) {
-		//             console.log(data)
-		//         },
-		//   		error: function(jqXHR, textStatus, errorThorwn){
-		//   			console.log('jqXHR')
-		//   		}
-	 //    	});
-		// };
-		// displayTweets()
 
 })(jQuery)
